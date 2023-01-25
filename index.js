@@ -7,7 +7,9 @@ const hostname = 'localhost';
 app.get('/', (req, res) => {
     const apiKey = req.query.apiKey;
 
-    res.send({data: 'API endpoint exposed.'})
+    res.send("Hello, world!")
+
+    // res.send({data: 'API endpoint exposed.'})
 })
 
 app.listen(port, hostname, () => {
