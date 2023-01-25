@@ -1,17 +1,14 @@
-const express = require("express");
-const app = express()
+const http = require('http');
 
-const port = 3000;
 const hostname = 'localhost';
+const port = 3000;
 
-app.get('/', (req, res) => {
-    const apiKey = req.query.apiKey;
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World!\n');
+});
 
-    res.send("Hello, world!")
-
-    // res.send({data: 'API endpoint exposed.'})
-})
-
-app.listen(port, hostname, () => {
-    console.log('Server is running at http://${hostname}:${port}/');
-})
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
