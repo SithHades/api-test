@@ -4,7 +4,7 @@ const app = express()
 const port = 3000;
 const hostname = 'localhost';
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     const apiKey = req.query.apiKey;
 
     res.send({data: 'API endpoint exposed.'})
